@@ -9,8 +9,22 @@ public class LectorDatos {
     public LectorDatos() {
         scanner = new Scanner(System.in);
     }
-
-    public int leerEntero(String mensaje) {
+/*
+    public int leerEntero(String mensaje) throws InputMismatchException {
+        int numero = 0;
+        boolean entradaValida = false;
+        do {
+                System.out.print(mensaje);
+                numero = scanner.nextInt();
+                entradaValida = true;
+            
+        } while (!entradaValida);
+        return numero;
+    }
+    
+    */
+   
+     public int leerEntero(String mensaje) throws InputMismatchException {
         int numero = 0;
         boolean entradaValida = false;
 
@@ -20,13 +34,16 @@ public class LectorDatos {
                 numero = scanner.nextInt();
                 entradaValida = true;
             } catch (InputMismatchException e) {
-                System.out.println("Entrada no válida. Por favor, ingrese un número entero.");
-                scanner.nextLine(); // Limpiar el búfer del teclado
+                
+                throw new InputMismatchException("Entrada no válida. Por favor, ingrese un número entero.");
+               
+                
             }
         } while (!entradaValida);
 
         return numero;
     }
+  
 
     public double leerDouble(String mensaje) {
         double numero = 0;

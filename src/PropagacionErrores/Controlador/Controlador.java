@@ -1,6 +1,7 @@
 package PropagacionErrores.Controlador;
 import PropagacionErrores.Modelo.LectorDatos;
 import PropagacionErrores.Vista.Vista;
+import java.util.InputMismatchException;
 class Controlador {
     private LectorDatos lectorDatos;
     private Vista vista;
@@ -17,9 +18,14 @@ class Controlador {
             int opcion = lectorDatos.leerEntero("Seleccione una opción: ");
             switch (opcion) {
                 case 1:
-                    int entero = lectorDatos.leerEntero("Ingrese un número entero: ");
-                    vista.mostrarMensaje("El número entero ingresado es: " + entero);
-                    break;
+                    try{
+                        int entero = lectorDatos.leerEntero("Ingrese un número entero: ");
+                        vista.mostrarMensaje("El número entero ingresado es: " + entero);
+                        break;
+                    }catch(InputMismatchException e){
+                        System.out.println(e.getMessage());
+                //scanner.nextLine(); // Limpiar el búfer del teclado
+                    }
                 case 2:
                     double decimal = lectorDatos.leerDouble("Ingrese un número decimal: ");
                     vista.mostrarMensaje("El número decimal ingresado es: " + decimal);
