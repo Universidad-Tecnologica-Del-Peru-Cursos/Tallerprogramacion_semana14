@@ -1,4 +1,4 @@
-package Vista;
+package ManejoErrores.Vista;
 
 public class Vista {
     public void mostrarMensaje(String mensaje) {

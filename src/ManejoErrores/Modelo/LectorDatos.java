@@ -1,4 +1,4 @@
-package Modelo;
+package ManejoErrores.Modelo;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;

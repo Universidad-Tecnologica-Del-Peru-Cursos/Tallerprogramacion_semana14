@@ -1,6 +1,6 @@
-package Controlador;
-import Modelo.LectorDatos;
-import Vista.Vista;
+package ManejoErrores.Controlador;
+import ManejoErrores.Modelo.LectorDatos;
+import ManejoErrores.Vista.Vista;
 
 class Controlador {
     private LectorDatos lectorDatos;
